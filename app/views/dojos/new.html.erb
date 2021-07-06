@@ -1,0 +1,43 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col">
+			<h2>New Dojo</h2>
+		</div>
+	</div>
+	<div class="row">
+		<form action="create" method="POST" class="col">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div class="row">
+				<div class="col-6">
+                    <label for="branch">Branch</label>
+					<input class="form-control" id="branch" type="text" name="dojo[branch]" class="validate" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+                    <label for="street">Street</label>
+					<input class="form-control" id="street" type="text" name="dojo[street]" class="validate" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+                    <label for="city">City</label>
+					<input class="form-control" id="city" type="text" name="dojo[city]" class="validate" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+                    <label for="state">State</label>
+					<input class="form-control" id="state" type="text" name="dojo[state]" class="validate" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<button type="submit" name="action" class="btn btn-primary mt-3">
+						Create
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

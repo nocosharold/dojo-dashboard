@@ -1,6 +1,23 @@
 <div class="container mt-5">
-
 	<div>
+		<% if flash[:notice] %>
+			<div class="row">
+				<div style="color: #fff" class="col s12 green darken-3">
+					<p><%=flash[:notice]%></p>
+				</div>
+			</div>
+			<% end %>
+			<!--  -->
+			<% if flash[:alert] %>
+			<div class="row">
+				<div style="color: #fff" class="col s12 red darken-3">
+					<% flash[:alert].each do |alert| %>
+					<p><%=alert%></p>
+					<%end%>
+				</div>
+			</div>
+		<% end %>
+
 		<div class="container">
 		<h2>Listing <span><%= @dojos.length %></span> Dojos</h2>
 			<table class="table table-bordered table-striped table-hover">
@@ -24,6 +41,11 @@
 					<% end %>
 				</tbody>
 			</table>
+			<div class="row">
+				<div class="col"><%= link_to 'New Dojo',dojos_new_path, class: "btn btn-primary" %></div>
+			</div>
 		</div>
+		
 	</div>
+	
 </div>
