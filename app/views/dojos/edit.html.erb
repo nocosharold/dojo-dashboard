@@ -1,0 +1,38 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col ps-0">
+			<h2>Edit Dojo: <%= @dojo.branch%></h2>
+		</div>
+	</div>
+	<div class="row">
+		<form action="/dojos/<%= @dojo.id%>" method="POST" class="col-6">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<input type="hidden" name="_method" value="patch" />
+			<div class="row">
+				<label for="branch">Branch</label>
+				<input id="branch" type="text" name="dojo[branch]" value="<%= @dojo.branch%>" class="form-control" />
+			</div>
+			<div class="row">
+				<label for="street">Street</label>
+				<input id="street" type="text" name="dojo[street]" value="<%= @dojo.street%>" class="form-control" />
+			</div>
+			<div class="row">
+				<label for="city">City</label>
+				<input id="city" type="text" name="dojo[city]" value="<%= @dojo.city%>" class="form-control" />
+			</div>
+			<div class="row">
+				<label for="state">State</label>
+				<input id="state" type="text" name="dojo[state]" value="<%= @dojo.state%>" class="form-control" />
+			</div>
+			<div class="row mt-3">
+					<button class="btn btn-success" type="submit" name="action">
+						Update
+					</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="row mt-3">
+		<div class="col ps-0"><a href="/dojos" class="btn btn-outline-primary">Home</a> | <a href="/dojos/<%= @dojo.id%>" class="btn btn-primary">Show</a></div>
+	</div>
+</div>

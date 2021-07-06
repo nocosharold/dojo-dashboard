@@ -1,0 +1,21 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col">
+			<h1><%= @dojo.branch%></h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<p><b>City:</b> <%= @dojo.city%> 
+            <br/>
+            <b>State:</b> <%= @dojo.state%></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<a href="/dojos" class="btn btn-outline-primary">Home</a> | <a href="/dojos/<%= @dojo.id%>/edit" class="btn btn-outline-success">Edit</a> | <a href="/dojos" class="btn btn-outline-dark">Back</a>
+		</div>
+	</div>
+</div>
