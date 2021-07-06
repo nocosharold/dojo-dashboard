@@ -1,3 +1,3 @@
 # README
 
-# Initial Commit = Dojo Dashboard
+## Initial Commit - Dojo Dashboard
