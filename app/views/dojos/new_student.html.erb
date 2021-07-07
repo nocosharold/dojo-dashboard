@@ -1,0 +1,48 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col ps-0">
+			<h2>New Student</h2>
+		</div>
+	</div>
+	<div class="row">
+		<form action="/dojos/<%= @dojo.id%>/students/create" method="POST" class="col-6">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div class="row">
+                <label for="first_name">First Name</label>
+                <input id="first_name" type="text" name="student[first_name]" class="form-control mb-3" />
+			</div>
+			<div class="row">
+                <label for="last_name">Last Name</label>
+                <input id="last_name" type="text" name="student[last_name]" class="form-control mb-3" />
+			</div>
+			<div class="row">
+                <label for="email">Email Address</label>
+                <input id="email" type="text" name="student[email]" class="form-control mb-3" />
+			</div>
+			<div class="row">
+				<select class="form-select mb-3" name="student[dojo_id]">
+					<option value="" disabled selected>Choose your option</option>
+				
+<% @dojos.each do |dojo|%>
+					<option value="<%= dojo.id %>" 
+                    <%= dojo.id == @dojo.id ? 'selected' : "" %> > <%= dojo.branch %>
+                    </option>
+<% end %>
+				</select>
+			</div>
+			<div class="row">
+                <button class="btn btn-primary" type="submit" name="action">
+                    Create
+                </button>
+			</div>
+		</form>
+	</div>
+
+	<div class="row">
+        <div class="col mt-3 ps-0">
+            <a href="/dojos" class="btn btn-outline-primary">Home</a>
+            <a href="/dojos/<%= @dojo.id%>" class="btn btn-outline-dark"><%= @dojo.branch%></a>
+            <!-- | <a href="/dojos/<%= @dojo.id%>/edit" class="btn">Edit</a> | <a href="/dojos" class="btn">Back</a> -->
+        </div>
+    </div>
+</div>
